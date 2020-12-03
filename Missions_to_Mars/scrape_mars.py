@@ -39,6 +39,13 @@ def scrape():
 
     # Mars Facts to be scraped
 
-    
+    mars_facts_url = "https://space-facts.com/mars/"
+    table = pd.read_html(mars_facts_url)
+    mars_facts_df = table[2]
+    mars_facts_df.columns = ["Description", "Value"]
+    mars_facts_html = mars_facts_df.to_html()
+    mars_facts_html.replace('\n', "")
+
+    # 
 
     return mars_dict
