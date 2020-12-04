@@ -8,7 +8,7 @@
 
 Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
 
-# Example:
+#Example:
 news_title = "NASA's Next Mars Mission to Investigate Interior of Red Planet"
 
 news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this summer, on course for launch next May from Vandenberg Air Force Base in central California -- the first interplanetary launch in history from America's West Coast."
@@ -23,7 +23,7 @@ Make sure to find the image url to the full size .jpg image.
 
 Make sure to save a complete url string for this image.
 
-# Example:
+#Example:
 featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
 
 # Mars Facts
@@ -44,7 +44,7 @@ Use a Python dictionary to store the data using the keys img_url and title.
 
 Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
 
-# Example:
+#Example:
 
 hemisphere_image_urls = [
     {"title": "Valles Marineris Hemisphere", "img_url": "..."},
