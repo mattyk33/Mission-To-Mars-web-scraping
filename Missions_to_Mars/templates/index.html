@@ -16,6 +16,61 @@
 
 </head>
 
+<body>
+    <div class="container">
+        <div class="jumbotron text-center border-bottom">
+            <h1 class="font-weight-bold">Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+              <h2><u>Latest Mars News</u></h2>
+            </div>
+        </div>
+    <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>{{mars_dict.news_title}}</h4>
+                <p>{{mars_dict.news_p}}</p>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h3>Featured Mars Image</h3>
+                <img src= "{{mars_dict.featured_image_url}}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+            </div>
+
+        <div class="border">
+            <div class="panel panel-default">
+                <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
+                    <div class="panel-body">
+                        <h5>Mars Facts</h5>
+                        <p>{{ mars_dict.fact_table | safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:80px;">
+            <div class="page-header">
+              <h2 class="text-center"><b>Mars Hemispheres</b></h2>
+            </div>
+            
+            {% for hemisphere in mars_dict.hemisphere_images %}
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <img src="{{hemisphere.img_url}}">
+                    </div>
+                    <div class="caption">
+                        <h3><b>{{hemisphere.title}}</b></h3>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
 
 </html>
