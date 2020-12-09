@@ -3,11 +3,12 @@ from bs4 import BeautifulSoup as bs
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
+import time
 import requests
 import pymongo
 
 def init_browser():
-    executable_path = {"executable_path": "chromedriver.exe"}
+    executable_path = {"executable_path": ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
@@ -18,6 +19,9 @@ def scrape():
 
     url = "https://mars.nasa.gov/news/"
     browser.visit(url)
+
+    time.sleep(1)
+
     html = browser.html
     soup = bs(html, 'html.parser')
     # Collect the latest News Title and Paragraph Text
@@ -80,5 +84,7 @@ def scrape():
         "fact_table": str(mars_facts_html),
         "hemisphere_images": hemi_image_urls
     }
+
+    browser.quit()
 
     return mars_dict
