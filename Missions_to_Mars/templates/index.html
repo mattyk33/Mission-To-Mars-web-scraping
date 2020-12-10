@@ -42,18 +42,14 @@
                 <img src= "{{mars_dict.featured_image_url}}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
             </div>
 
-        <div class="border">
-            <div class="panel panel-default">
-                <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
-                    <div class="panel-body">
-                        <h5>Mars Facts</h5>
-                        <p>{{ mars_dict.fact_table | safe }}</p>
-                    </div>
-                </div>
+        <div class="col col-4">
+            <div class="boxborder">
+                <h5>Mars Facts</h5>
+                <p>{{ mars_dict.fact_table | safe }}</p>
             </div>
         </div>
 
-        <h3 style="padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h3>
+        <h3 style="padding-top: 50px; margin-top: 100px; text-align:center">Mars Hemispheres</h3>
         <div class="card-deck">
             <hr>
             <div class="col-md-12">
@@ -61,7 +57,7 @@
             
             {% for hemisphere in mars_dict.hemisphere_images %}
                     <div class="col-md-6">
-                        <div class="card text-white bg-dark" style="margin: 30px;">
+                        <div class="card text-black bg-white" style="margin: 30px;">
                             <img class="card-img-top" src="{{ hemisphere.img_url }}" />
                             <div class="card-body">
                                 <p class="card-text">{{ hemisphere.title }}</p>
