@@ -25,7 +25,8 @@ def scrape():
     html = browser.html
     soup = bs(html, 'html.parser')
     # Collect the latest News Title and Paragraph Text
-    news_title = soup.find_all('div', class_='content_title')[0].text
+    nw_title=soup.select_one('ul.item_list li.slide')
+    news_title = nw_title.find('div', class_='content_title').text
     news_p = soup.find_all('div', class_='article_teaser_body')[0].text
 
     # JPL Mars Space Image to be scraped

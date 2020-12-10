@@ -53,21 +53,24 @@
             </div>
         </div>
 
-        <div class="row" style="margin-top:80px;">
-            <div class="page-header">
-              <h2 class="text-center"><b>Mars Hemispheres</b></h2>
-            </div>
+        <h3 style="padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h3>
+        <div class="card-deck">
+            <hr>
+            <div class="col-md-12">
+                <div class="row">
             
             {% for hemisphere in mars_dict.hemisphere_images %}
-                <div class="col-md-6">
-                    <div class="thumbnail">
-                        <img src="{{hemisphere.img_url}}">
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top" src="{{ hemisphere.img_url }}" />
+                            <div class="card-body">
+                                <p class="card-text">{{ hemisphere.title }}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="caption">
-                        <h3>{{hemisphere.title}}</h3>
-                    </div>
-                </div>
             {% endfor %}
+                </div>
+            </div>
         </div>
 
     </div>
